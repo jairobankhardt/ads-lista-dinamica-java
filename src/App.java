@@ -3,21 +3,21 @@ public class App {
 
         Lista lista = new Lista();
 
-        lista.insereUltimo(10);
+        lista.mostrar();
+
+        System.out.println("--- 1 ---");
         lista.insereUltimo(20);
         lista.insereUltimo(30);
+        lista.insereUltimo(50);
+        lista.inserePrimeiro(10);
+        lista.insereDepois(30, 40);
+        lista.insereDepois(35, 45);
+        lista.mostrar();
 
-        lista.inserePrimeiro(50);
-
-        lista.insereUltimo(5);
-
-        lista.retirarPrimeiro();
-
-        lista.retirarUltimo();
-        lista.retirarUltimo();
+        System.out.println("\n--- 2 ---");
         lista.retirarPrimeiro();
         lista.retirarUltimo();
-
+        lista.retirarNo(30);
         lista.mostrar();
     }
 }

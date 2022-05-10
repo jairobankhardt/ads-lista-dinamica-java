@@ -34,6 +34,28 @@ public class Lista {
         }
     }
 
+    void insereDepois(int no, int info) {
+        if (!this.vazia()) {
+            No auxiliar = this.primeiro;
+            boolean achou = false;
+            while ((auxiliar != null) && !achou) {
+                if (auxiliar.getInfo() == no) {
+                    achou = true;
+                } else {
+                    auxiliar = auxiliar.getProx();
+                }
+            }
+            if (achou) {
+                No novoNo = new No();
+                novoNo.setInfo(info);
+                novoNo.setProx(auxiliar.getProx());
+                auxiliar.setProx(novoNo);
+            } else {
+                System.out.println("Nó " + no + " não encontrado. Nada foi inserido.");
+            }
+        }
+    }
+
     public void retirarPrimeiro() {
         if (!this.vazia()) {
             this.primeiro = primeiro.getProx();
@@ -50,6 +72,30 @@ public class Lista {
                     auxiliar = auxiliar.getProx();
                 }
                 auxiliar.setProx(null);
+            }
+        }
+    }
+
+    public void retirarNo(int no) {
+        if (!this.vazia()) {
+            if (this.primeiro.getProx() == null && this.primeiro.getInfo() == no) {
+                this.retirarPrimeiro();
+            } else {
+                No auxiliar = this.primeiro;
+                boolean achou = false;
+                while (auxiliar.getProx() != null && !achou) {
+                    if (auxiliar.getProx().getInfo() == no) {
+                        achou = true;
+                    } else {
+                        auxiliar = auxiliar.getProx();
+                    }
+                }
+                if (achou) {
+                    auxiliar.setProx(auxiliar.getProx().getProx());
+                } else {
+                    System.out.println("Nó " + no + " não encontrado. Nada foi deletado.");
+                }
+
             }
         }
     }
