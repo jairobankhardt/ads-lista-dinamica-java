@@ -1,4 +1,4 @@
-## Lista com Vetor em Java
+## Lista Dinâmica em Java
 
 Pontifícia Universidade Católica do Paraná
 
