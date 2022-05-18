@@ -1,5 +1,3 @@
-import org.w3c.dom.DocumentType;
-
 public class Lista {
 
     private No primeiro;

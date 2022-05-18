@@ -1,6 +1,3 @@
-/**
- * No
- */
 public class No {
 
     private Integer informacao;
