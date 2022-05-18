@@ -1,3 +1,5 @@
+import org.w3c.dom.DocumentType;
+
 public class Lista {
 
     private No primeiro;
@@ -53,19 +55,23 @@ public class Lista {
             } else {
                 System.out.println("Nó " + no + " não encontrado. Nada foi inserido.");
             }
+        } else {
+            System.out.println("*** Lista Vazia ***");
         }
     }
 
-    public void retirarPrimeiro() {
+    public void removePrimeiro() {
         if (!this.vazia()) {
             this.primeiro = primeiro.getProx();
+        } else {
+            System.out.println("*** Lista Vazia ***");
         }
     }
 
-    public void retirarUltimo() {
+    public void removeUltimo() {
         if (!this.vazia()) {
             if (this.primeiro.getProx() == null) {
-                this.retirarPrimeiro();
+                this.removePrimeiro();
             } else {
                 No auxiliar = this.primeiro;
                 while (auxiliar.getProx().getProx() != null) {
@@ -73,13 +79,15 @@ public class Lista {
                 }
                 auxiliar.setProx(null);
             }
+        } else {
+            System.out.println("*** Lista Vazia ***");
         }
     }
 
-    public void retirarNo(int no) {
+    public void remove(int no) {
         if (!this.vazia()) {
             if (this.primeiro.getProx() == null && this.primeiro.getInfo() == no) {
-                this.retirarPrimeiro();
+                this.removePrimeiro();
             } else {
                 No auxiliar = this.primeiro;
                 boolean achou = false;
@@ -97,6 +105,8 @@ public class Lista {
                 }
 
             }
+        } else {
+            System.out.println("*** Lista Vazia ***");
         }
     }
 

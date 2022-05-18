@@ -1,3 +1,19 @@
+/*
+Pontifícia Universidade Católica do Paraná
+
+Escola Politécnica
+
+Tecnologia em Análise e Desenvolvimento de Sistemas
+
+Métodos de Pesquisa e Ordenação em Estruturas de Dados
+
+Professor Fellipe Medeiros Veiga
+
+Alunos: Jairo Moisés Stuehler Bankhardt
+        Eduardo Luan da Rosa
+        Fernando Antunes
+*/
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -15,9 +31,9 @@ public class App {
         lista.mostrar();
 
         System.out.println("\n--- 2 ---");
-        lista.retirarPrimeiro();
-        lista.retirarUltimo();
-        lista.retirarNo(30);
+        lista.removePrimeiro();
+        lista.removeUltimo();
+        lista.remove(30);
         lista.mostrar();
     }
 }
