@@ -1,3 +1,6 @@
+/**
+ * Nós que farão parte da lista
+ */
 public class No {
 
     private Integer informacao;

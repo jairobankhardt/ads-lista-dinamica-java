@@ -6,10 +6,43 @@ public class Lista {
         this.primeiro = null;
     }
 
+    /**
+     * Verifica se a lista está vazia
+     * 
+     * @return void
+     */
     private boolean vazia() {
         return this.primeiro == null;
     }
 
+    /**
+     * Busca o objeto No que contém o valor passado como parâmetro
+     * 
+     * @param valor - informação do nó (int)
+     * @return No
+     */
+    public No buscaNo(int valor) {
+        if (!this.vazia()) {
+            No auxiliar = this.primeiro;
+            while (auxiliar != null && auxiliar.getInfo() != valor) {
+                auxiliar = auxiliar.getProx();
+            }
+            if (auxiliar != null) {
+                return auxiliar;
+            } else {
+                System.out.println("Nó com o valor " + valor + " não encontrado.");
+            }
+        } else {
+            System.out.println("*** Lista Vazia ***");
+        }
+        return null;
+    }
+
+    /**
+     * Insere um nó no início da lista
+     * 
+     * @param info - int
+     */
     public void inserePrimeiro(int info) {
         No auxiliar = new No();
         auxiliar.setInfo(info);
@@ -17,6 +50,11 @@ public class Lista {
         this.primeiro = auxiliar;
     }
 
+    /**
+     * Insere um nó no fim da lista
+     * 
+     * @param info - int
+     */
     public void insereUltimo(int info) {
         if (this.vazia() == true) {
             this.inserePrimeiro(info);
@@ -34,30 +72,25 @@ public class Lista {
         }
     }
 
-    void insereDepois(int no, int info) {
-        if (!this.vazia()) {
-            No auxiliar = this.primeiro;
-            boolean achou = false;
-            while ((auxiliar != null) && !achou) {
-                if (auxiliar.getInfo() == no) {
-                    achou = true;
-                } else {
-                    auxiliar = auxiliar.getProx();
-                }
-            }
-            if (achou) {
-                No novoNo = new No();
-                novoNo.setInfo(info);
-                novoNo.setProx(auxiliar.getProx());
-                auxiliar.setProx(novoNo);
-            } else {
-                System.out.println("Nó " + no + " não encontrado. Nada foi inserido.");
-            }
-        } else {
-            System.out.println("*** Lista Vazia ***");
+    /**
+     * Insere um novo nó depois do nó passado como parâmetro
+     * 
+     * @param no   - nó que deve ficar antes do novo nó (No)
+     * @param info - valor do novo nó (int)
+     */
+    public void insereDepois(No no, int info) {
+        if (!this.vazia() && no != null) {
+            No novoNo = new No();
+            novoNo.setInfo(info);
+            novoNo.setProx(no.getProx());
+            no.setProx(novoNo);
+
         }
     }
 
+    /**
+     * Remove o primeiro nó
+     */
     public void removePrimeiro() {
         if (!this.vazia()) {
             this.primeiro = primeiro.getProx();
@@ -66,6 +99,9 @@ public class Lista {
         }
     }
 
+    /**
+     * Remove o último nó
+     */
     public void removeUltimo() {
         if (!this.vazia()) {
             if (this.primeiro.getProx() == null) {
@@ -82,32 +118,33 @@ public class Lista {
         }
     }
 
-    public void remove(int no) {
-        if (!this.vazia()) {
-            if (this.primeiro.getProx() == null && this.primeiro.getInfo() == no) {
+    /**
+     * Removo o nó passado como parâmetro
+     * 
+     * @param no - nó que deve ser excluído (No)
+     */
+    public void remove(No no) {
+        if (!this.vazia() && no != null) {
+            if (this.primeiro.getProx() == null && this.primeiro == no) {
                 this.removePrimeiro();
             } else {
                 No auxiliar = this.primeiro;
                 boolean achou = false;
                 while (auxiliar.getProx() != null && !achou) {
-                    if (auxiliar.getProx().getInfo() == no) {
+                    if (auxiliar.getProx() == no) {
                         achou = true;
                     } else {
                         auxiliar = auxiliar.getProx();
                     }
                 }
-                if (achou) {
-                    auxiliar.setProx(auxiliar.getProx().getProx());
-                } else {
-                    System.out.println("Nó " + no + " não encontrado. Nada foi deletado.");
-                }
-
+                auxiliar.setProx(auxiliar.getProx().getProx());
             }
-        } else {
-            System.out.println("*** Lista Vazia ***");
         }
     }
 
+    /**
+     * Exibe os valores da lista
+     */
     public void mostrar() {
         if (this.primeiro != null) {
             No auxiliar = this.primeiro;
