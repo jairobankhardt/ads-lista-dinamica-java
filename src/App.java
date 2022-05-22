@@ -1,14 +1,15 @@
 /**
  * Pontifícia Universidade Católica do Paraná
- * Tecnologia em Análise e Desenvolvimento de Sistemas
- * Métodos de Pesquisa e Ordenação em Estruturas de Dados
+ * Escola Politécnica
  * 
+ * Métodos de Pesquisa e Ordenação em Estruturas de Dados
  * Professor Fellipe Medeiros Veiga
  * 
- * Alunos:
- * Jairo Moisés Stuehler Bankhardt
- * Eduardo Luan da Rosa
- * Fernando Antunes
+ * Tecnologia em Análise e Desenvolvimento de Sistemas
+ * Alunos: Fernando Antunes e Jairo Moisés Stuehler Bankhardt
+ * 
+ * Gestão de Tecnologia da Informação
+ * Aluno: Eduardo Luan da Rosa
  * 
  */
 
