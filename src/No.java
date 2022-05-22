@@ -11,20 +11,20 @@ public class No {
         this.proximo = null;
     }
 
-    public void setInfo(Integer informacao) {
-        this.informacao = informacao;
-    }
-
-    public void setProx(No proximo) {
-        this.proximo = proximo;
-    }
-
     public No getProx() {
         return this.proximo;
     }
 
     public Integer getInfo() {
         return this.informacao;
+    }
+
+    public void setInfo(Integer informacao) {
+        this.informacao = informacao;
+    }
+
+    public void setProx(No proximo) {
+        this.proximo = proximo;
     }
 
 }
